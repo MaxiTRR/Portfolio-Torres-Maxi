@@ -1,0 +1,57 @@
+.info-text{
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+}
+
+#name{
+    font-size: 3.125rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#profesion{
+    font-size: 2rem;
+}
+
+
+/* CLASES PARA EL MODAL*/
+
+#edit1 #delete1{
+    background-color: transparent;
+    border: none;
+    /*color: #fff;
+    /*font-size: 2rem;*/
+    margin-right: 20px;
+}
+
+.btn-icon-dark{
+    color:#fff;
+    font-size: 2rem;
+}
+
+.btn-icon-light{
+    color:#000;
+    font-size: 2rem;
+}
+
+.btn-icon-darkAdd{
+    color:#000;
+}
+
+.btn-icon-lightAdd{
+    color:#fff;
+    background-color: #000;
+}
+
+.modal-title{
+    color: #000;
+}
+
+.btn-add-new{
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 60px;
+    padding: 20px;
+}

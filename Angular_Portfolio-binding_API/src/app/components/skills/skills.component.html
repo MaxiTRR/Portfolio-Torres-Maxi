@@ -1,0 +1,105 @@
+<section>
+    <div id="skills" class="container-fluid">
+        <div class="container">
+            <h2 id="skills-title" class="h2 text-center">Skills</h2>
+            <div 
+                [ngClass]="data === false? 'skills-card-dark': 'skills-card-light'"
+                class="row pt-5 pb-5 d-flex justify-content-center"
+                *ngFor="let row of skillData"
+                >
+                <div class="col-md-8">
+                    <div class="container">
+                        <h3 class="skill-title">{{row.nombre}}</h3>
+                        <div class="progress">
+                            <div 
+                                class="progress-bar" 
+                                role="progressbar" 
+                                [style.width.%]="row.nivel" 
+                                attr.aria-valuenow="{{row.nivel}}" 
+                                aria-valuemin="0" 
+                                aria-valuemax="100"
+                                >
+                            </div>
+                        </div>
+
+                        
+                        <!-- Boton para editar el contenido-->
+                        <div class="container-fluid">
+                            <div class="text-center">
+                                <button
+                                [ngClass]="data=== false? 'btn-icon-dark': 'btn-icon-light'" 
+                                id="edit" 
+                                type="button" 
+                                class="btn" 
+                            
+                                >
+                                <fa-icon [icon]="faPencil"></fa-icon>
+                                </button>
+
+                                <!-- Boton para eliminar el contenido-->
+                                <button 
+                                    [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'"
+                                    id="delete" 
+                                    type="button"
+                                    class="btn"
+                                    >
+                                    <fa-icon [icon]="faXmark"></fa-icon>
+                                </button>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                            Skill Info
+                                        </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Formulario-->
+                                        <form [formGroup]="formValue">
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que Skill deseas agregar?</label>
+                                                <input type="text" formControlName = "nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <br>
+                                                <label for="exampleInputEmail1" class="form-typo form-label">¿En que nivel de esta Skill consideras que te encontras?</label>
+                                                <input type="number" formControlName ="nivel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                                            </div>
+                                        </form>
+                                    ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Cancelar
+                                        </button>
+                                        <button type="button" (click)="postSkillDetails()" class="btn btn-primary">
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Boton para agregar skill-->
+    <div class="container d-flex justify-content-center">
+        <button 
+            [ngClass]="data === false? 'btn-icon-darkAdd': 'btn-icon-lightAdd'"
+            class="btn-add-new mx-auto"
+            data-bs-toggle="modal" data-bs-target="#exampleModal"
+            >
+            Añadir nueva skill
+        </button>
+    </div>      
+    
+</section>

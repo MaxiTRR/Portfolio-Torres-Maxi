@@ -1,0 +1,108 @@
+<!-- Experiencia-->
+<section>
+    
+    <h2 id="exp-title" class="h2 text-center">Experiencia</h2>
+    
+    <div 
+        id="exp" class="container-fluid"
+        *ngFor="let row of expData"
+        >
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="exp-img">
+                    <img class="img-fluid mt-5 mb-5" id="amazon" src="../../../assets/amazon.png" alt="amazon">
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="">
+                    <p class="exp-title-enterprise">{{row.lugar}}</p>
+                    <br>
+                    <p>{{row.periodo}}</p>
+                    <p>{{row.area}}</p>
+                    <p>{{row.rol}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModalExp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Experiencia Info
+                    </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario-->
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que experiencia deseas agregar?</label>
+                            <input type="text" formControlName="lugar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que año/periodo de experiencia deseas agregar?</label>
+                            <input type="text" formControlName="periodo"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que area de experiencia deseas agregar?</label>
+                            <input type="text" formControlName="area" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que rol de experiencia deseas agregar?</label>
+                            <input type="text" formControlName="rol" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                        </div>
+                    </form>
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancelExp" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button 
+                        type="button" class="btn btn-primary"
+                        (click)="postExpDetails()"                   
+                    >
+                        Actualizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Boton para agregar nueva experiencia-->
+    <div class="container d-flex justify-content-center">
+        <button 
+            [ngClass]="data === false? 'btn-icon-darkAdd': 'btn-icon-lightAdd'"
+            class="btn-add-new mx-auto"
+            data-bs-toggle="modal" data-bs-target="#exampleModalExp"
+            >
+            Añadir nueva experiencia
+        </button>
+    </div>
+    
+    <!-- Boton para editar el contenido-->
+    <div class="container-fluid">
+        <div class="text-center">
+            <button
+            [ngClass]="data=== false? 'btn-icon-dark': 'btn-icon-light'" 
+            id="edit" 
+            type="button" 
+            class="btn" 
+        
+            >
+            <fa-icon [icon]="faPencil"></fa-icon>
+            </button>
+
+            <!-- Boton para eliminar el contenido-->
+            <button 
+                [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'"
+                id="delete" 
+                type="button"
+                class="btn"
+                >
+                <fa-icon [icon]="faXmark"></fa-icon>
+            </button>
+        </div>
+    </div>
+</section>

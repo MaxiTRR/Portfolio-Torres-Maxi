@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-icon{
+    color: #fff;
+    font-size: 3.125rem;
+    margin-right: 1rem;
+}
+
+#pencil{
+    height: 100%;
+}
+
+/*#pencil button{
+    background-color: transparent;
+    border: none;
+    font-size: 4rem;
+}*/
+
+.form-typo{
+    color:black;
+    
+}
+
+
+

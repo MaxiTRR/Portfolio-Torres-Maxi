@@ -1,0 +1,28 @@
+.imagen{
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-perfil{
+    background-image: url("../../../assets/Torres, Maximiliano.jpg");
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+     height: 31.25rem;
+     width: 31.25rem;
+     /* los siguientes valores son independientes del tamaño del círculo */
+     background-size: cover;
+     border-radius: 50%;
+     /*background-size: 100% auto;*/
+     border: #000 solid 5px; 
+}
+
+@media (max-width: 768px){
+    .imagen-perfil{
+        height: 15.625rem;
+        width: 15.625rem;
+    }
+}
+
+.info-container{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,77 @@
+/*Educacion*/
+
+#educacion{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#udemy{
+    width: 10.688rem;
+    height: 6.484rem;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+#edu-title{
+    font-size:2rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+    letter-spacing: 15px;
+}
+
+#edu-title-inst{
+    font-size: 3.12rem;
+}
+
+/*Estilos Card*/
+
+.card-title{
+    font-size: 50px;
+}
+
+.edu-card-dark{
+    border-radius: 15px;
+    color: #000;
+    background-color: #fff;
+}
+
+.edu-card-light{
+    border-radius: 15px;
+    color: #fff;
+    background-color: #000;
+}
+
+.modal-title{
+    color: #000;
+}
+
+/*BOTONES*/
+.btn-add-new{
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#edit #delete{
+    background-color: transparent;
+    border: none;
+    /*color: #fff;*/
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.btn-icon-dark{
+    color:#000;
+    background-color: #fff;
+    
+}
+
+.btn-icon-light{
+    color:#fff;
+    background-color: #000;
+    
+}

@@ -1,0 +1,58 @@
+.h2{
+    margin-top: 200px;
+}
+
+#exp{
+    margin-top: 80px;
+}
+
+#exp-title{
+    font-size:2rem;
+    font-weight: 700;
+    letter-spacing: 15px;
+}
+
+.exp-title-enterprise{
+    font-size: 35px;
+    letter-spacing: 12px;
+}
+
+#amazon{
+    width: 22.688rem;
+    height: 6.484rem;
+}
+
+.exp-img{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-title{
+    color: #000;
+}
+
+.btn-add-new{
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.btn-icon-darkAdd{
+    color:#000;
+}
+
+.btn-icon-lightAdd{
+    color:#fff;
+    background-color: #000;
+}
+
+.btn-icon-dark{
+    color:#fff;
+    font-size: 2rem;
+}
+
+.btn-icon-light{
+    color:#000;
+    font-size: 2rem;
+}

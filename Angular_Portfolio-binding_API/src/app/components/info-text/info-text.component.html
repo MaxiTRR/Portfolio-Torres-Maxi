@@ -1,0 +1,81 @@
+<section>
+    <div *ngFor="let row of infoTextData">
+        <p id="name">{{row.nombreInfo}}</p>
+        <p id="profesion">{{row.titulo}}</p>
+        <p class="pt-5">{{row.descripcion}}</p>
+    </div>
+    
+    
+    <!-- Boton para editar la Informacion-->
+    <div class="pencil-info container-fluid">
+        <button 
+            [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'" 
+            id="edit"
+            type="button"
+            class="btn"
+            >
+            <fa-icon [icon]="faPencil"></fa-icon>
+        </button>
+
+        <button 
+            [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'"
+            id="delete" 
+            class="btn"
+            >
+            <fa-icon [icon]="faXmark"></fa-icon>
+        </button>
+
+        <!-- Boton para agregar la Informacion -->
+        <button 
+            [ngClass]="data === false? 'btn-icon-darkAdd': 'btn-icon-lightAdd'"
+            class="btn-add-new"
+            data-bs-toggle="modal" data-bs-target="#exampleModalInfo"
+            >
+            Agregar Info
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Info Personal
+                        </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulario-->
+                        <form [formGroup]="formValue">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que nombre deseas agregar?</label>
+                                <input type="text" formControlName="nombreInfo"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <br>
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que titulo deseas agregar?</label>
+                                <input type="text" formControlName="titulo"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <br>
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que tipo de descripcion deseas agregar?</label>
+                                <input type="number" formControlName="descripcion"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                            </div>
+                        </form>
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancelInfo" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" 
+                            class="btn btn-primary"
+                            (click)="postInfoPersonalDetails()"
+                            >
+                            Actualizar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

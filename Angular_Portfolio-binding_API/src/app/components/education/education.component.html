@@ -1,0 +1,105 @@
+<!--Educacion-->
+<section id="educacion">
+    <div  class="container-fluid">
+        <div class="text-center">
+            <h2 id="edu-title" class="h2">Educacion</h2>
+            <div class="row d-flex justify-content-center" >
+                <div class="col-lg-4" *ngFor="let row of eduData" >
+                    <div [ngClass]="data === false? 'edu-card-dark': 'edu-card-light'"
+                        class="card mx-auto"
+                        style="width: 18rem;"
+                        id="edu-card"
+                        
+                        >
+                        <img class="card-img-top mx-auto" id="udemy" src="../../../assets/Udemy Logo.png">
+                        <div [ngClass]="data === false? 'edu-card-dark': 'edu-card-light'">
+                            <h5 class="card-title">{{row.nombreInst}}</h5>
+                            <p class="card-text">{{row.periodoEdu}}</p>
+                            <p class="card-text">{{row.tituloEdu}}</p>
+                            <p class="card-text">{{row.descripcionEdu}}</p>
+
+
+                            <!-- Boton para editar el contenido-->
+                            <button
+                                [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'" 
+                                id="edit" 
+                                type="button" 
+                                class="btn" data-bs-toggle="modal"
+                            >
+                                <fa-icon [icon]="faPencil"></fa-icon>
+                            </button>
+
+                            <!-- Boton para eliminar el contenido-->
+                            <button 
+                                [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'"
+                                id="delete" 
+                                type="button"
+                                class="btn"
+                                >
+                                <fa-icon [icon]="faXmark"></fa-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+
+             <!--Boton para agregar estudio-->
+            <button 
+                [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'"
+                class="btn-add-new"
+                data-bs-toggle="modal" data-bs-target="#exampleModalEdu"
+                >
+                Añadir nuevo estudio
+            </button>
+        </div>
+        
+
+       
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalEdu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Educacion Info
+                        </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulario-->
+                        <form [formGroup]="formValue">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que educacion deseas agregar?</label>
+                                <input type="text" formControlName="nombreInst"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <br>
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que año/periodo de educacion deseas agregar?</label>
+                                <input type="text" formControlName="periodoEdu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                                <br>
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que titulo de educacion deseas agregar?</label>
+                                <input type="text" formControlName="tituloEdu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                                <br>
+                                <label for="exampleInputEmail1" class="form-typo form-label">¿Que descripcion de educacion deseas agregar?</label>
+                                <input type="text" formControlName="descripcionEdu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                            </div>
+                        </form>
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancelEdu" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button 
+                            type="button" class="btn btn-primary"
+                            (click)="postEduDetails()"
+                            >
+                            Actualizar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

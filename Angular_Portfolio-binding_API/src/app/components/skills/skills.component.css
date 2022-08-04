@@ -1,0 +1,67 @@
+/*Skills*/
+
+#skills-title{
+    font-size:2rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+    letter-spacing: 15px;
+}
+
+.skills-card-dark{
+    border: 1px solid #fff;
+    border-radius: 15px;
+}
+
+.skills-card-light{
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+.skill-title{
+    margin: 1.24rem 0;
+    text-align: center;
+}
+
+#pencil-info{
+    padding: 0; 
+}
+
+.btn-add-new{
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#edit #delete{
+    background-color: transparent;
+    border: none;
+    /*color: #fff;*/
+    /*font-size: 2rem;*/
+    margin-right: 20px;
+}
+
+.btn-icon-dark{
+    color:#fff;
+    font-size: 2rem;
+}
+
+.btn-icon-light{
+    color:#000;
+    font-size: 2rem;
+}
+
+.btn-icon-darkAdd{
+    color:#000;
+}
+
+.btn-icon-lightAdd{
+    color:#fff;
+    background-color: #000;
+}
+
+
+.modal-title{
+    color: #000;
+}
+

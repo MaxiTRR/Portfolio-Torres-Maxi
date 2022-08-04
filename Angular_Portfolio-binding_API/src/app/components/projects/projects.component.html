@@ -1,0 +1,92 @@
+<section>
+    <div id="project" class="container-fluid text-center">
+        <h2 id="project-title" class="h2">Proyectos</h2>
+        
+        <div [ngClass]="data === false? 'project-card-dark': 'project-card-light'"
+             class="container pb-5"
+             *ngFor="let row of proData"
+            >
+            <h3 class="pt-5">{{row.tituloPro}}</h3>
+            <p>{{row.periodoPro}}</p>
+            <p>{{row.tipoPro}}</p>
+            <p>{{row.descripcionPro}}</p>
+            
+            <button
+                [ngClass]="data === false? 'btn-icon-dark': 'btn-icon-light'" 
+                id="edit" 
+                type="button" 
+                class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            
+                >
+                <fa-icon [icon]="faPencil"></fa-icon>
+            </button>
+
+            <!-- Boton para eliminar el contenido-->
+            <button 
+                [ngClass]="data=== false? 'btn-icon-dark': 'btn-icon-light'"
+                id="delete" 
+                type="button"
+                class="btn"
+                >
+                <fa-icon [icon]="faXmark"></fa-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center">
+         <!--Boton para agregar un nuevo proyecto-->
+         <button 
+            [ngClass]="data === false? 'btn-icon-darkAdd': 'btn-icon-lightAdd'"
+            class="btn-add-new"
+            data-bs-toggle="modal" data-bs-target="#exampleModalPro"
+            >
+            Añadir nuevo proyecto
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalPro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Proyecto Info
+                    </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario-->
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que proyecto deseas agregar?</label>
+                            <input type="text" formControlName="tituloPro" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que año/periodo de esete proyecto deseas agregar?</label>
+                            <input type="text" formControlName="periodoPro" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que tipo de descripcion de este proyecto deseas agregar?</label>
+                            <input type="text" formControlName="tipoPro" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                            <br>
+                            <label for="exampleInputEmail1" class="form-typo form-label">¿Que descripcion de este proyecto deseas agregar?</label>
+                            <input type="text" formControlName="descripcionPro" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="1" max="100">
+                        </div>
+                    </form>
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancelPro" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button 
+                        type="button" class="btn btn-primary"
+                        (click)="postProjectDetails()"
+                        >
+                        Actualizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
